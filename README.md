@@ -1,133 +1,107 @@
 <div align="center">
 
-# 🧠 Mental Health Scorer
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=34&duration=3000&pause=1000&color=7C3AED&center=true&vCenter=true&width=950&lines=🧠+Mental+Health+Scorer;End-to-End+Machine+Learning;Python+%7C+Scikit-learn+%7C+FastAPI" />
 
-**An end-to-end Machine Learning application that predicts a mental health score based on student lifestyle, academic, and social media usage information.**
-
-Built with **Python**, **Scikit-learn**, and **FastAPI**.
+<br>
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=flat-square&logo=pydantic&logoColor=white)
 ![Joblib](https://img.shields.io/badge/Joblib-4B8BBE?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-success?style=flat-square)
+![MIT](https://img.shields.io/badge/License-MIT-181717?style=flat-square)
+
+*A production-oriented machine learning application for estimating student mental health scores from lifestyle, academic, and digital behavior indicators.*
 
 </div>
 
 ---
 
-# 📑 Table of Contents
+# Overview
 
-- [Overview](#-overview)
-- [Project Workflow](#-project-workflow)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Running the Project](#-running-the-project)
-- [API Endpoint](#-api-endpoint)
-- [Input Features](#-input-features)
-- [Dataset](#-dataset)
-- [Future Improvements](#-future-improvements)
-- [Connect With Me](#-connect-with-me)
+Mental Health Scorer is an end-to-end machine learning application designed to estimate a student's mental health score using structured lifestyle, academic, and social media usage attributes. The project combines a Scikit-learn prediction pipeline with a FastAPI backend to provide fast, reliable, and real-time inference through a RESTful API.
 
 ---
 
-# 📖 Overview
-
-**Mental Health Scorer** is an end-to-end machine learning application that predicts a student's mental health score from lifestyle, academic, and social media usage information. A trained **Scikit-learn** model is served through a **FastAPI** REST API, with incoming requests validated using **Pydantic** and shaped into model-ready features with **Pandas**.
-
-The trained model is loaded with **Joblib** for inference, and the repository also includes a lightweight HTML/CSS/JS frontend for interacting with the API directly in the browser.
-
----
-
-# 🗺️ Project Workflow
-
-<p align="center">
-  <img src="assets/workflow-diagram.svg" alt="Mental Health Scorer prediction pipeline diagram" width="640">
-</p>
-
----
-
-# ✨ Features
-
-- Predicts mental health score from structured input
-- REST API powered by FastAPI
-- Data validation using Pydantic
-- Machine Learning inference using Joblib
-- Simple and modular project structure
-- Easy to integrate with frontend applications
-
----
-
-# 🛠 Tech Stack
-
-| Category | Technologies |
-|-----------|--------------|
-| Language | Python |
-| Backend | FastAPI |
-| Machine Learning | Scikit-learn |
-| Data Processing | Pandas |
-| Model Serialization | Joblib |
-| Validation | Pydantic |
-
----
-
-# 📂 Project Structure
+# Architecture
 
 ```text
-Mental-Health-Score/
+               Student Input
+                     │
+                     ▼
+          Input Validation (Pydantic)
+                     │
+                     ▼
+           Feature Processing (Pandas)
+                     │
+                     ▼
+      Trained ML Model (Scikit-learn)
+                     │
+                     ▼
+      Model Loading (Joblib)
+                     │
+                     ▼
+          FastAPI Prediction API
+                     │
+                     ▼
+        Predicted Mental Health Score
+```
+
+---
+
+# Key Features
+
+- End-to-end machine learning workflow
+- Production-ready REST API using FastAPI
+- Robust request validation with Pydantic
+- Efficient model serialization through Joblib
+- Modular project architecture
+- Lightweight frontend for prediction requests
+
+---
+
+# Technology Stack
+
+| Layer | Technology |
+|--------|------------|
+| Language | Python |
+| Machine Learning | Scikit-learn |
+| Backend | FastAPI |
+| Data Processing | Pandas |
+| Validation | Pydantic |
+| Serialization | Joblib |
+
+---
+
+# Project Structure
+
+```text
+Mental-Health-Score
 │
 ├── assets/
-│   └── workflow-diagram.svg
 ├── main.py
 ├── Mental_Health_Model.pkl
-├── requirements.txt
-├── Student Social Media And Mental Health Impact.csv
 ├── ML_Project.ipynb
 ├── index.html
 ├── style.css
 ├── script.js
+├── requirements.txt
 └── README.md
 ```
 
 ---
 
-# 🚀 Installation
-
-Clone the repository
+# Quick Start
 
 ```bash
 git clone https://github.com/AbhishekGrover1/Mental-Health-Score.git
-```
 
-Move into the project directory
-
-```bash
 cd Mental-Health-Score
-```
 
-Install dependencies
-
-```bash
 pip install -r requirements.txt
-```
 
----
-
-# ▶ Running the Project
-
-Start the FastAPI server
-
-```bash
 uvicorn main:app --reload
-```
-
-Open
-
-```
-http://127.0.0.1:8000
 ```
 
 API Documentation
@@ -138,77 +112,17 @@ http://127.0.0.1:8000/docs
 
 ---
 
-# 🔌 API Endpoint
+# Dataset
 
-### POST `/predict`
-
-Returns the predicted mental health score based on the supplied student information.
-
----
-
-# 📋 Input Features
-
-The model accepts the following inputs:
-
-| Feature |
-|----------|
-| Age |
-| Gender |
-| Country |
-| Academic Level |
-| Most Used Platform |
-| Purpose of Use |
-| Average Daily Usage Hours |
-| Daily Unlocks |
-| Study Hours |
-| Physical Activity Hours |
-| Sleep Hours Per Night |
-| Stress Level |
-
----
-
-# 📊 Dataset
-
-The project uses the dataset included in the repository:
-
-```
-Student Social Media And Mental Health Impact.csv
-```
-
----
-
-# 🚀 Future Improvements
-
-- Interactive dashboard
-- Model monitoring
-- Cloud deployment
-- Authentication for API
-- Batch prediction support
-
----
-
-# 🤝 Connect With Me
-
-<p align="center">
-
-<a href="https://github.com/AbhishekGrover1">
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github">
-</a>
-
-<a href="https://www.linkedin.com/in/abhishek-grover07/">
-<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin">
-</a>
-
-<a href="https://www.instagram.com/abh1shekgrover/">
-<img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram">
-</a>
-
-</p>
+The model is trained using the **Student Social Media and Mental Health Impact** dataset included in this repository.
 
 ---
 
 <div align="center">
 
-Made with ❤️ using Python & FastAPI
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/AbhishekGrover1)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abhishek-grover07/)
+
+<sub>Engineered with Python, FastAPI, and Scikit-learn.</sub>
 
 </div>
